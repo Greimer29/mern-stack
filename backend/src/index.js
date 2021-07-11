@@ -1,4 +1,5 @@
 const app = require('./app');
+require('./database');
 
 //Initializing the serveras
 async function Main() {
