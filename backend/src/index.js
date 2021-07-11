@@ -3,10 +3,13 @@ require('dotenv').config();
 const app = require('./app');
 require('./database');
 
-//Initializing the serveras
+//settings
+app.set('port', process.env.PORT || 8080)
+
+//Initializing the server
 async function Main() {
-    await app.listen(8080);
-    console.log('Server on port: 8080');
+    await app.listen(app.get('port'));
+    console.log(`server on port ${app.get('port')}`);
 }
 
 Main();
