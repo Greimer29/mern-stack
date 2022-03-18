@@ -1,14 +1,11 @@
 const mongoose = require('mongoose');
 
-const URI = process.env.MONGODB_URI ?
-    process.env.MONGODB_URI :
-    'mongodb://localhost/databasetest'
+const URL = "mongodb://0.0.0.0/mernstack";
 
-mongoose.connect(URI, {
-    useNewUrlParser: true,
-    useCreateIndex: true
+mongoose.connect(URL, {
+    useNewUrlParser: true
 })
 
 mongoose.connection.once('open', () => {
-    console.log(`Tha database now is connected`)
+    console.log('DB is conected');
 })
