@@ -5,7 +5,7 @@ const { getNotes, createNote, getNote, updateNote, deleteNote } = require('../co
 
 router.route('/')
     .get(getNotes)
-    .post((req, res) => res.send("Post- notes routes"))
+    .post(createNote)
 
 router.route('/:id')
     .get(getNote)
